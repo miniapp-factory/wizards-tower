@@ -1,3 +1,3 @@
-export const title = "Fruit Slot Machine";
-export const description = "Spin the slots and win with colorful fruit!";
+export const title = "Crypto Sloth";
+export const description = "Spin the slots and win with cryptocurrency icons!";
 export const url = process.env.NEXT_PUBLIC_URL;
