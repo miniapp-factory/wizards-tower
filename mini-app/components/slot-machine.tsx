@@ -5,18 +5,20 @@ import { Button } from "@/components/ui/button";
 import { Share } from "@/components/share";
 import { title, url } from "@/lib/metadata";
 
-const fruits = ["btc", "eth", "xrp", "solana", "doge"] as const;
-type Fruit = typeof fruits[number];
+const fruits = ["apple", "banana", "cherry", "grape", "orange", "pear"] as const;
+const crypto = ["btc", "eth", "xrp", "solana", "doge"] as const;
+type Item = typeof fruits[number] | typeof crypto[number];
 
-function randomFruit(): Fruit {
-  return fruits[Math.floor(Math.random() * fruits.length)];
+function randomFruit(arr: typeof fruits | typeof crypto): Item {
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
 export default function SlotMachine() {
-  const [grid, setGrid] = useState<Fruit[][]>([
-    [randomFruit(), randomFruit(), randomFruit()],
-    [randomFruit(), randomFruit(), randomFruit()],
-    [randomFruit(), randomFruit(), randomFruit()],
+  const [useCrypto, setUseCrypto] = useState(false);
+  const [grid, setGrid] = useState<Item[][]>([
+    [randomFruit(useCrypto ? crypto : fruits), randomFruit(useCrypto ? crypto : fruits), randomFruit(useCrypto ? crypto : fruits)],
+    [randomFruit(useCrypto ? crypto : fruits), randomFruit(useCrypto ? crypto : fruits), randomFruit(useCrypto ? crypto : fruits)],
+    [randomFruit(useCrypto ? crypto : fruits), randomFruit(useCrypto ? crypto : fruits), randomFruit(useCrypto ? crypto : fruits)],
   ]);
   const [spinning, setSpinning] = useState(false);
   const [win, setWin] = useState(false);
@@ -42,7 +44,7 @@ export default function SlotMachine() {
     setWin(false);
     const interval = setInterval(() => {
       setGrid((prev) => [
-        [randomFruit(), randomFruit(), randomFruit()],
+        [randomFruit(useCrypto ? crypto : fruits), randomFruit(useCrypto ? crypto : fruits), randomFruit(useCrypto ? crypto : fruits)],
         [prev[0][0], prev[0][1], prev[0][2]],
         [prev[1][0], prev[1][1], prev[1][2]],
       ]);
@@ -50,6 +52,7 @@ export default function SlotMachine() {
     setTimeout(() => {
       clearInterval(interval);
       setSpinning(false);
+      if (hasWin) setUseCrypto(true);
     }, 2000);
   };
 
