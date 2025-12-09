@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Share } from "@/components/share";
 import { title, url } from "@/lib/metadata";
 
-const fruits = ["apple", "banana", "cherry", "lemon"] as const;
+const fruits = ["btc", "eth", "xrp", "solana", "doge"] as const;
 type Fruit = typeof fruits[number];
 
 function randomFruit(): Fruit {
