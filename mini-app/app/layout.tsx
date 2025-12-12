@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en"><head><meta name="base:app_id" content="691fb0637f22d95cdee2ffa9" /></head>
+    <html lang="en"><Head><meta name="base:app_id" content="691fb0637f22d95cdee2ffa9" /></Head>
       <body className={`${inter.className} antialiased dark`}>
         <MiniAppProvider>
           <div className="font-sans min-h-screen flex flex-col place-content-between gap-2">
