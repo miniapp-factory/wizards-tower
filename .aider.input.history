@@ -4804,3 +4804,35 @@
 +Metatag base:app_id not found
 +hatayı düzelt
 +
+
+# 2025-12-12 20:01:08.397079
++import { Metadata } from 'next';
++
++export const metadata: Metadata = {
++  other: {
++    'base:app_id': '691fb0637f22d95cdee2ffa9',
++  },
++};
++
++export default function Home() {
++  return (<div>{/* Your page content */}</div>);
++}
++󰎦
++Metatag base:app_id not found
++
+
+# 2025-12-12 20:01:08.397506
++import { Metadata } from 'next';
++
++export const metadata: Metadata = {
++  other: {
++    'base:app_id': '691fb0637f22d95cdee2ffa9',
++  },
++};
++
++export default function Home() {
++  return (<div>{/* Your page content */}</div>);
++}
++󰎦
++Metatag base:app_id not found
++
