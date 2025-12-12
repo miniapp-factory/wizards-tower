@@ -1,0 +1,5 @@
+# Files that have been added to the chat and are ready for editing
+# 1. mini-app/components/slot-machine.tsx
+# 2. mini-app/lib/metadata.ts
+# 3. mini-app/app/page.tsx
+# 4. mini-app/components/share.tsx
