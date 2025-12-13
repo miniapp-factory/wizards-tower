@@ -4836,3 +4836,65 @@
 +󰎦
 +Metatag base:app_id not found
 +
+
+# 2025-12-13 16:45:57.496302
++import { useSendCalls } from 'wagmi'
++import { parseEther } from 'viem'
++import { Attribution } from "ox/erc8021"
++
++function App() {
++  const { sendCalls } = useSendCalls()
++
++  return (
++    <button
++      onClick={() =>
++        sendCalls({
++          calls: [
++            {
++              to: '0xa5cc3c03994DB5b0d9A5eEdD10CabaB0813678AC',
++              data: '0xdeadbeef',
++            },
++          ],
++          capabilities: {
++            dataSuffix: Attribution.toDataSuffix({codes: ["bc_qqw2dfen"]})
++          }
++        })
++      }
++    >
++      Send calls
++    </button>
++  )
++}
++bc_qqw2dfen
++Reward dağıtımı için payout address: 0x29536D0bc1004ab274c4F0F59734Ad74D4559b7B
+
+# 2025-12-13 16:45:57.496733
++import { useSendCalls } from 'wagmi'
++import { parseEther } from 'viem'
++import { Attribution } from "ox/erc8021"
++
++function App() {
++  const { sendCalls } = useSendCalls()
++
++  return (
++    <button
++      onClick={() =>
++        sendCalls({
++          calls: [
++            {
++              to: '0xa5cc3c03994DB5b0d9A5eEdD10CabaB0813678AC',
++              data: '0xdeadbeef',
++            },
++          ],
++          capabilities: {
++            dataSuffix: Attribution.toDataSuffix({codes: ["bc_qqw2dfen"]})
++          }
++        })
++      }
++    >
++      Send calls
++    </button>
++  )
++}
++bc_qqw2dfen
++Reward dağıtımı için payout address: 0x29536D0bc1004ab274c4F0F59734Ad74D4559b7B
